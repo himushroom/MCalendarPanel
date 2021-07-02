@@ -7,6 +7,7 @@ node_modules
 
 #打包文件
 dist
+cDist
 
 # 编辑器生成的文件夹
 .idea

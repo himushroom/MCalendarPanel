@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"private": false,
 	"author": "himushroom",
-	"main": "./dist/MCalendarPanel.common.js",
+	"main": "./cDist/MCalendarPanel.common.js",
 	"files": [
 		"dist"
 	],
@@ -13,7 +13,7 @@
 		"start": "vue-cli-service serve",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
-		"build-component": "vue-cli-service build --target lib --name MCalendarPanel ./src/components/MCalendarPanel/index.js"
+		"build-component": "vue-cli-service build --target lib --dest cDist --name MCalendarPanel ./src/components/MCalendarPanel/index.js"
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",
