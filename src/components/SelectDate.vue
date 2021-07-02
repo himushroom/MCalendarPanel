@@ -14,6 +14,7 @@
         inactive-text="white"
         @input="switchThemeChange"
       ></el-switch>
+      <el-button type="primary" size="mini" class="go-today" @click="goToday">回到今天</el-button>
     </div>
     <div class="select-date-wrap">
       <el-select
@@ -99,6 +100,9 @@ export default {
     handleChange() {
       this.$emit("update:date", new Date(this.year, this.month - 1));
     },
+    goToday() {
+      this.$emit("update:date", new Date());
+    },
     lunarChange(e) {
       this.$emit("update:showLunar", e.target.checked);
     },
@@ -159,4 +163,7 @@ export default {
     margin 0 5px
     color #777
     cursor pointer
+
+.go-today
+  margin-left 25px
 </style>

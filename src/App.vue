@@ -44,8 +44,7 @@ export default {
 <script setup>
 import { ref } from "vue";
 import SelectDate from "./components/SelectDate.vue";
-// import MCalendarPanel from "../dist/MCalendarPanel.common.js";
-import MCalendarPanel from "../dist/MCalendarPanel.umd.js";
+import MCalendarPanel from "../dist/MCalendarPanel.common.js";
 import "../dist/MCalendarPanel.css";
 
 const value = ref("");
