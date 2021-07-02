@@ -1,17 +1,64 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <select-date
+    v-model:date="value"
+    v-model:showLunar="showLunar"
+    v-model:showFestival="showFestival"
+    v-model:beganMonday="beganMonday"
+    v-model:disabled="disabled"
+    v-model:switchTheme="switchTheme"
+  ></select-date>
+  <div class="wrap">
+    <m-calendar-panel
+      ref="m-calendar"
+      v-model:select="select"
+      v-model:date="value"
+      :show-lunar="showLunar"
+      :show-festival="showFestival"
+      :began-monday="beganMonday"
+      :disabled="disabled"
+      :theme="switchTheme ? 'black': 'white'"
+      @select-change="selectChange"
+    >
+      <!-- <template #today="scope">
+        <div>今日</div>
+      </template>-->
+      <!-- <template #dateCell="scope">
+        <div>{{ scope.data.day+'/'+scope.data.lunarDay }}</div>
+        <div>{{ scope.data.festival[0] || scope.data.IDayCn }}</div>
+      </template>-->
+    </m-calendar-panel>1
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  mounted() {
+    // 默认选中
+    // console.log(this.$refs["m-calendar"]?.setSelectDate("2021-05-18"));
+    // console.log(this.$refs["m-calendar"]?.getSolarLunarInfo("2021-05-18"));
+    // console.log(this.$refs["m-calendar"]?.toDoubleDigit("5"));
   }
-}
+};
+</script>
+
+<script setup>
+import { ref } from "vue";
+import SelectDate from "./components/SelectDate.vue";
+// import MCalendarPanel from "../dist/MCalendarPanel.common.js";
+import MCalendarPanel from "../dist/MCalendarPanel.umd.js";
+import "../dist/MCalendarPanel.css";
+
+const value = ref("");
+const select = ref("");
+const showLunar = ref(true);
+const showFestival = ref(true);
+const beganMonday = ref(false);
+const disabled = ref(false);
+const switchTheme = ref(false);
+
+const selectChange = value => {
+  console.log(value);
+};
 </script>
 
 <style>
@@ -19,8 +66,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.wrap {
+  width: 455px;
 }
 </style>
