@@ -1,4 +1,4 @@
-# m-calendar-panel v1.0.1
+# m-calendar-panel v0.0.1
 
 ## Installation
 
@@ -27,8 +27,6 @@ Using yarn:
 
 ## Option
 
-> ## props
-
 | 参数           | 说明                                                                                                        | 类型             | 默认值             |
 | :------------- | :---------------------------------------------------------------------------------------------------------- | :--------------- | :----------------- |
 | date           | 当前日历展示的年月，字符串格式为'2021-05'，默认展示今年当月，如果值和 select 传入值冲突，展示页以'date'为准 | Date, String     | new Date()         |
@@ -42,21 +40,23 @@ Using yarn:
 | width          | 日历宽度，可传入百分比/实际的 px/计算后的宽度等                                                             | String           | '100%'             |
 | disabled       | 日历是否可点击，设置不可点击仍然可以通过 select/setSelectDate 来设置选中项                                  | Boolean          | false              |
 
-> ## Events
+## Events
 
 | 参数          | 说明                             | 类型                                 | 默认值 |
 | :------------ | :------------------------------- | :----------------------------------- | :----- |
 | select-change | 选中日期状态发生变化时的回调函数 | function(date, SolarLunarInfo(date)) | -      |
 
-> ## Methods
+## Methods
 
-tips: 以下方法请确保日历加载完成后使用
+> tips: 以下方法请确保日历加载完成后使用
 
 | 参数              | 说明                                                                        | 类型                                                                   | 默认值 |
 | :---------------- | :-------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :----- |
 | setSelectDate     | 手动设置选中项                                                              | `this.$refs["m-calendar"].setSelectDate("2021-05-18")`                 | -      |
 | getSolarLunarInfo | 可获得传入日期的 SolarLunarInfo                                             | `this.$refs["m-calendar"].getSolarLunarInfo("2021-05-18")` => [Object] | -      |
 | toDoubleDigit     | 如果传入的数字/字符不足两位则补足两位，大于等于两位则返回它本身的字符串表示 | `this.$refs["m-calendar"].getSolarLunarInfo(5)` => [String]'05'        | -      |
+
+## SolarLunarInfo
 
 ```code
 SolarLunarInfo = {
