@@ -5392,13 +5392,6 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-m-calendar-panel@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/m-calendar-panel/-/m-calendar-panel-1.0.4.tgz#f07410e059a645fcbaea8c643bbbb8def5cebd3a"
-  integrity sha512-F1qgtKJYUWPgZ2msg2lDCHNZ6VPDvoPVRz+QKIJrgqFH+rTroOaHabkbc+NTcSfkq3xBcHR1uOy/tCV24+J5hg==
-  dependencies:
-    vue "^3.0.11"
-
 magic-string@^0.25.7:
   version "0.25.7"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.7.tgz#3f497d6fd34c669c6798dcb821f2ef31f5445051"
@@ -8419,7 +8412,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^3.0.0, vue@^3.0.11:
+vue@^3.0.0:
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.0.11.tgz#c82f9594cbf4dcc869241d4c8dd3e08d9a8f4b5f"
   integrity sha512-3/eUi4InQz8MPzruHYSTQPxtM3LdZ1/S/BvaU021zBnZi0laRUyH6pfuE4wtUeLvI8wmUNwj5wrZFvbHUXL9dw==

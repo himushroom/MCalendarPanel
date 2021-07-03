@@ -29,7 +29,6 @@
 		"element-plus": "^1.0.2-beta.45",
 		"eslint": "^6.7.2",
 		"eslint-plugin-vue": "^7.0.0",
-		"m-calendar-panel": "^1.0.4",
 		"stylus": "^0.54.8",
 		"stylus-loader": "^3.0.2",
 		"vue-style-loader": "^4.1.3"
