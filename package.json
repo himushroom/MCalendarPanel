@@ -11,7 +11,7 @@
 	"license": "ISC",
 	"scripts": {
 		"start": "vue-cli-service serve",
-		"build": "vue-cli-service build",
+		"build": "bash deploy.sh",
 		"lint": "vue-cli-service lint",
 		"build-component": "vue-cli-service build --target lib --dest cDist --name MCalendarPanel ./src/components/MCalendarPanel/index.js"
 	},

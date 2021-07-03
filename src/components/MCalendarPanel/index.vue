@@ -1,7 +1,11 @@
 <template>
-  <div :class="['m-calendar', `theme-${theme}`]">
+  <div :class="['m-calendar-panel', `theme-${theme}`]">
     <div class="weeks">
-      <div v-for="week in weeks" :key="week" class="week">{{ week }}</div>
+      <div
+        v-for="week in weeks"
+        :key="week"
+        class="week"
+      >{{ week }}</div>
     </div>
     <div :class="['panel', {'disabled': disabled}]">
       <div
@@ -20,7 +24,11 @@
             name="today"
           ></slot>
           <template v-else>
-            <slot v-if="$slots.dateCell" :data="getSolarLunarInfo(item.isToday)" name="dateCell"></slot>
+            <slot
+              v-if="$slots.dateCell"
+              :data="getSolarLunarInfo(item.isToday)"
+              name="dateCell"
+            ></slot>
             <template v-else>
               <div>{{ item.dateNum || '' }}</div>
               <div
@@ -28,7 +36,10 @@
                 :class="['extra', festivalClassName]"
                 :style="festivalStyle"
               >{{ item.lunar.festival[0] }}</div>
-              <div v-else class="extra">{{ item.dateNum ? `${currentLunar(item.lunar)}` : '' }}</div>
+              <div
+                v-else
+                class="extra"
+              >{{ item.dateNum ? `${currentLunar(item.lunar)}` : '' }}</div>
             </template>
           </template>
         </div>
@@ -81,7 +92,7 @@ export default defineComponent({
     festivalStyle: {
       // 节日单独配置样式
       type: Object,
-      default: () => {}
+      default: () => { }
     },
     festivalClassName: {
       // 节日单独配置样式
@@ -91,7 +102,7 @@ export default defineComponent({
     selectStyle: {
       // 选中日期时的样式
       type: Object,
-      default: () => {}
+      default: () => { }
     },
     selectClassName: {
       // 选中日期时的样式
@@ -104,7 +115,7 @@ export default defineComponent({
     }
   },
   emits: ["update:date", "update:select", "date-change", "select-change"],
-  data() {
+  data () {
     return {
       dateArr: [],
       isToday: "",
@@ -113,16 +124,16 @@ export default defineComponent({
     };
   },
   computed: {
-    cWidth() {
+    cWidth () {
       return this.width;
     },
-    year() {
+    year () {
       return this.value.getFullYear();
     },
-    month() {
+    month () {
       return this.value.getMonth();
     },
-    weeks() {
+    weeks () {
       if (!this.beganMonday) {
         return ["日", "一", "二", "三", "四", "五", "六"];
       } else {
@@ -134,7 +145,7 @@ export default defineComponent({
     date: {
       deep: true,
       immediate: true,
-      handler(val) {
+      handler (val) {
         if (!val) return;
         const date = val instanceof Date ? val : new Date(val);
 
@@ -144,14 +155,14 @@ export default defineComponent({
     value: {
       deep: true,
       immediate: true,
-      handler() {
+      handler () {
         this.getMonthDays(this.year, this.month);
       }
     },
     select: {
       deep: true,
       immediate: true,
-      handler(val) {
+      handler (val) {
         if (val instanceof Date) {
           this.isSelect = val;
         }
@@ -160,18 +171,18 @@ export default defineComponent({
         }
       }
     },
-    beganMonday() {
+    beganMonday () {
       this.getMonthDays(this.year, this.month);
     }
   },
-  created() {
+  created () {
     const now = new Date();
     this.isToday = `${now.getFullYear()}-${this.toDoubleDigit(
       now.getMonth() + 1
     )}-${this.toDoubleDigit(now.getDate())}`;
   },
   methods: {
-    getMonthDays(setYear, setMonth) {
+    getMonthDays (setYear, setMonth) {
       // 全部时间的月份都是按0~11基准，显示月份才+1
       const dateArr = []; // 需要遍历的日历数组数据
       let arrLen = 0; // dateArr的数组长度，显示6排，多出来的格子补充下月数据
@@ -241,7 +252,7 @@ export default defineComponent({
       }
       this.dateArr = dateArr;
     },
-    currentLunar(lunar) {
+    currentLunar (lunar) {
       if (!lunar) return;
       // 默认显示农历日期，从上到下优先级依次递增
       let text = "";
@@ -259,7 +270,7 @@ export default defineComponent({
 
       return text;
     },
-    handleChange(value, data) {
+    handleChange (value, data) {
       if (this.disabled) return;
       this.setSelectDate(value);
 
@@ -285,17 +296,17 @@ export default defineComponent({
       this.$emit("update:date", newDate);
       this.$emit("date-change", value, this.getSolarLunarInfo(value));
     },
-    setSelectDate(value) {
+    setSelectDate (value) {
       if (value === this.isSelect) return;
       this.isSelect = value;
 
       this.$emit("update:select", value);
       this.$emit("select-change", value, this.getSolarLunarInfo(value));
     },
-    getSolarLunarInfo(value) {
+    getSolarLunarInfo (value) {
       return getSolarLunar(value);
     },
-    toDoubleDigit(value) {
+    toDoubleDigit (value) {
       return value.toString().padStart(2, "0");
     }
   }
@@ -310,7 +321,7 @@ $gap = 2
 $gapLength = ($gap * 2) px
 $black = #333
 
-.m-calendar
+.m-calendar-panel
   width $width
 
   &.theme-white
