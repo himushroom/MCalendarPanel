@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import router from "./router";
 import {
 	ElSelect,
 	ElOption,
@@ -7,10 +8,12 @@ import {
 	ElCheckbox,
 	ElSwitch,
 	ElIcon,
-	ElButton,
+	ElButton
 } from "element-plus";
 
 const app = createApp(App);
+
+app.use(router);
 
 app.use(ElSelect);
 app.use(ElOption);

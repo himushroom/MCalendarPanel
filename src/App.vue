@@ -1,73 +1,12 @@
 <template>
-  <select-date
-    v-model:date="value"
-    v-model:showLunar="showLunar"
-    v-model:showFestival="showFestival"
-    v-model:beganMonday="beganMonday"
-    v-model:disabled="disabled"
-    v-model:switchTheme="switchTheme"
-  ></select-date>
-  <div class="wrap">
-    <m-calendar-panel
-      ref="mCalendar"
-      v-model:select="select"
-      v-model:date="value"
-      :show-lunar="showLunar"
-      :show-festival="showFestival"
-      :began-monday="beganMonday"
-      :disabled="disabled"
-      :theme="switchTheme ? 'black': 'white'"
-      @select-change="selectChange"
-    >
-      <!-- <template #today="scope">
-        <div>今日</div>
-      </template>-->
-      <!-- <template #dateCell="scope">
-        <div>{{ scope.data.day+'/'+scope.data.lunarDay }}</div>
-        <div>{{ scope.data.festival[0] || scope.data.IDayCn }}</div>
-      </template>-->
-    </m-calendar-panel>
-  </div>
+	<router-view></router-view>
 </template>
-
-<script>
-export default {
-  mounted() {
-    // 默认选中
-    // console.log(this.$refs["mCalendar"]?.setSelectDate("2021-05-18"));
-    // console.log(this.$refs["mCalendar"]?.getSolarLunarInfo("2021-05-18"));
-    // console.log(this.$refs["mCalendar"]?.toDoubleDigit("5"));
-  }
-};
-</script>
-
-<script setup>
-/* eslint-disable no-unused-vars */
-import { ref } from "vue";
-import SelectDate from "./components/SelectDate.vue";
-import MCalendarPanel from "./components/MCalendarPanel";
-
-const value = ref("");
-const select = ref("");
-const showLunar = ref(true);
-const showFestival = ref(true);
-const beganMonday = ref(false);
-const disabled = ref(false);
-const switchTheme = ref(false);
-
-const selectChange = value => {
-  console.log(value);
-};
-</script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-.wrap {
-  width: 455px;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #2c3e50;
 }
 </style>

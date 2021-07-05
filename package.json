@@ -11,13 +11,15 @@
 	"license": "ISC",
 	"scripts": {
 		"start": "vue-cli-service serve",
-		"build": "bash deploy.sh",
+		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
-		"build-component": "vue-cli-service build --target lib --dest cDist --name MCalendarPanel ./src/components/MCalendarPanel/index.js"
+		"build:bash": "bash deploy.sh",
+		"build:component": "vue-cli-service build --target lib --dest cDist --name MCalendarPanel ./src/components/MCalendarPanel/index.js"
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",
-		"vue": "^3.0.0"
+		"vue": "^3.0.0",
+		"vue-router": "^4.0.10"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "~4.5.0",
