@@ -6,7 +6,7 @@
 	"author": "himushroom",
 	"main": "./cDist/MCalendarPanel.common.js",
 	"files": [
-		"dist"
+		"cDist"
 	],
 	"license": "ISC",
 	"scripts": {
