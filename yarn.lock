@@ -5430,6 +5430,15 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+m-calendar-panel@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/m-calendar-panel/-/m-calendar-panel-0.0.4.tgz#cda597b5e7da93cf3e9adf011f5edcc0b67a280c"
+  integrity sha512-4s2PLVwuYKoL1JJViklvaMa6X6MP1z3q3FFY2GaCmNyd3jEzAbRvJwFmSra7iGpxgSNr4kHBHoukiXAkv7zHjg==
+  dependencies:
+    core-js "^3.6.5"
+    vue "^3.0.0"
+    vue-router "^4.0.10"
+
 magic-string@^0.25.7:
   version "0.25.7"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.7.tgz#3f497d6fd34c669c6798dcb821f2ef31f5445051"

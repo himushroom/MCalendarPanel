@@ -1,4 +1,4 @@
-# m-calendar-panel v0.0.1
+# m-calendar-panel
 
 ## Installation
 
@@ -13,11 +13,12 @@ Using yarn:
 
 ```code
     <template>
-        <m-calendar-panel></m-calendar-panel>
+        <m-calendar-panel />
     </template>
 
     <script>
-        import MCalendarPanel from 'm-calendar-panel'
+        import MCalendarPanel from "m-calendar-panel";
+        import "m-calendar-panel/cDist/m-calendar-panel.css";
 
         export default {
             components: { MCalendarPanel }
@@ -75,13 +76,3 @@ SolarLunarInfo = {
     Term: 返回当天节气
 }
 ```
-
-### 踩坑
-
-直接用的 vue-cli4，没有配置路由，直接在 app.vue 里面写完了一切，导致打包出来的文件始终无法渲染子节点（偷懒果然是要付出代价的 o(╥﹏╥)o
-
-### 感慨一下
-
-工作五年了第一次尝试写 npm 包，可能真的不是一个合格的程序员……（emmm, 以后加油少打点游戏……尝试写更多东西……
-
-这次也踩了不少坑，最坑的还是没有写路由导致项目搁置了很久……

@@ -1,20 +1,25 @@
 {
 	"name": "m-calendar-panel",
 	"description": "日历面板组件",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"private": false,
 	"author": "himushroom",
-	"main": "./cDist/MCalendarPanel.common.js",
 	"files": [
 		"cDist"
 	],
+	"main": "./cDist/m-calendar-panel.common.js",
+	"exports": {
+		".": {
+			"import": "./cDist/m-calendar-panel.common.js"
+		}
+	},
 	"license": "ISC",
 	"scripts": {
 		"start": "vue-cli-service serve",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
 		"build:bash": "bash deploy.sh",
-		"build:component": "vue-cli-service build --target lib --dest cDist --name MCalendarPanel ./src/components/MCalendarPanel/index.js"
+		"build:component": "vue-cli-service build --target lib --dest cDist --name m-calendar-panel ./src/components/MCalendarPanel/index.js"
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",
@@ -31,6 +36,7 @@
 		"element-plus": "^1.0.2-beta.45",
 		"eslint": "^6.7.2",
 		"eslint-plugin-vue": "^7.0.0",
+		"m-calendar-panel": "0.0.4",
 		"stylus": "^0.54.8",
 		"stylus-loader": "^3.0.2",
 		"vue-style-loader": "^4.1.3"
