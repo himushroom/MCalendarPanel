@@ -9,8 +9,6 @@ node_modules
 cDist
 dist
 
-public
-
 # 编辑器生成的文件夹
 .idea
 .vscode
