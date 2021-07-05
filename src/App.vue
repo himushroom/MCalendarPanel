@@ -26,13 +26,13 @@
         <div>{{ scope.data.day+'/'+scope.data.lunarDay }}</div>
         <div>{{ scope.data.festival[0] || scope.data.IDayCn }}</div>
       </template>-->
-    </m-calendar-panel>1
+    </m-calendar-panel>
   </div>
 </template>
 
 <script>
 export default {
-  mounted () {
+  mounted() {
     // 默认选中
     // console.log(this.$refs["mCalendar"]?.setSelectDate("2021-05-18"));
     // console.log(this.$refs["mCalendar"]?.getSolarLunarInfo("2021-05-18"));
@@ -42,6 +42,7 @@ export default {
 </script>
 
 <script setup>
+/* eslint-disable no-unused-vars */
 import { ref } from "vue";
 import SelectDate from "./components/SelectDate.vue";
 import MCalendarPanel from "./components/MCalendarPanel";
