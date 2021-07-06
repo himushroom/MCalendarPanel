@@ -128,7 +128,8 @@ export default defineComponent({
 			dateArr: [],
 			isToday: "",
 			value: new Date(), // 内部控制的日期
-			isSelect: ""
+			isSelect: "",
+			cHeight: ""
 		};
 	},
 	computed: {
@@ -188,6 +189,30 @@ export default defineComponent({
 		this.isToday = `${now.getFullYear()}-${this.toDoubleDigit(
 			now.getMonth() + 1
 		)}-${this.toDoubleDigit(now.getDate())}`;
+	},
+	mounted() {
+		const getHeight = () => {
+			let height;
+			if (this.width.includes("px")) {
+				height = Number(this.width.slice(0, -2));
+			} else {
+				// 如果宽度不是px，没有好的方式可以直接计算出单个盒子的宽度，需要获取dom
+				height = document.getElementsByClassName("m-calendar-panel")[0]
+					.offsetWidth;
+			}
+
+			this.cHeight = height + "px";
+		};
+		this.$nextTick(() => {
+			getHeight();
+
+			window.onresize = () => {
+				getHeight();
+			};
+		});
+	},
+	beforeUnmount() {
+		window.onresize = null;
 	},
 	methods: {
 		getMonthDays(setYear, setMonth) {
@@ -327,8 +352,8 @@ export default defineComponent({
 
 <style lang="stylus" scoped>
 $width = v-bind(cWidth)
-$grid = calc((v-bind(cWidth) / 7))
-$weekHeight = 35
+$gridW = calc((v-bind(cWidth) / 7))
+$gridH = calc((v-bind(cHeight) / 7))
 $gap = 2
 $gapLength = ($gap * 2) px
 $black = #333
@@ -397,10 +422,10 @@ $black = #333
   box-sizing border-box
 
 .week
-  width $grid
-  height $weekHeight px
+  width $gridW
+  height $gridH
   text-align center
-  line-height $weekHeight px
+  line-height $gridH
 
 .panel
   display flex
@@ -414,8 +439,8 @@ $black = #333
   display flex
   justify-content center
   align-items center
-  width $grid
-  height 18 + 16 + 14 * 2 px
+  width $gridW
+  height $gridH
 
   .line
     display flex
