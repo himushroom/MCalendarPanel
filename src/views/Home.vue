@@ -47,11 +47,8 @@ import { ref } from "vue";
 import SelectDate from "../components/SelectDate.vue";
 import MCalendarPanel from "../components/MCalendarPanel";
 
-// import MCalendarPanel from "../../cDist/MCalendarPanel.common.js";
-// import "../../cDist/MCalendarPanel.css";
-
-// import MCalendarPanel from "m-calendar-panel";
-// import "m-calendar-panel/cDist/m-calendar-panel.css";
+// import MCalendarPanel from "../../dist/MCalendarPanel.common.js";
+// import "../../dist/MCalendarPanel.css";
 
 const value = ref("");
 const select = ref("");
