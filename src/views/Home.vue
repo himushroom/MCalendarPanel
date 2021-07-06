@@ -58,8 +58,9 @@ const beganMonday = ref(false);
 const disabled = ref(false);
 const switchTheme = ref(false);
 
-const selectChange = value => {
+const selectChange = (value, data) => {
 	console.log(value);
+	console.log(data);
 };
 </script>
 

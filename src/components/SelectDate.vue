@@ -54,8 +54,8 @@
 				<el-option
 					v-for="(item, i) in lunarInfo"
 					:key="i"
-					:label="`${1900 + i}年`"
-					:value="1900 + i"
+					:label="`${1901 + i}年`"
+					:value="1901 + i"
 				></el-option>
 			</el-select>
 			<div class="month-wrap">
@@ -112,11 +112,11 @@ export default {
 	],
 	data() {
 		return {
-			lunarInfo,
+			lunarInfo: lunarInfo.slice(1, -1),
 			year: "",
 			month: "",
-			minYear: 1900,
-			maxYear: 2100
+			minYear: 1901,
+			maxYear: 2099
 		};
 	},
 	watch: {
@@ -205,5 +205,4 @@ export default {
 
 .go-today
   margin-left 25px
-
 </style>

@@ -129,7 +129,9 @@ export default defineComponent({
 			isToday: "",
 			value: new Date(), // 内部控制的日期
 			isSelect: "",
-			cHeight: ""
+			cHeight: "",
+			minYear: 1901,
+			maxYear: 2099
 		};
 	},
 	computed: {
@@ -309,6 +311,11 @@ export default defineComponent({
 		},
 		handleChange(value, data) {
 			if (this.disabled) return;
+			if (
+				data.lunar.year > this.maxYear ||
+				data.lunar.year < this.minYear
+			)
+				return;
 			this.setSelectDate(value);
 
 			if (data && !data.notNowMonth) return;
