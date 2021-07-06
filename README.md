@@ -1,6 +1,14 @@
 # m-calendar-panel
 
-## Installation
+## 介绍
+
+一个 vue3 搭建的日历面板组件，提供 npm 包，本组件只适用于 vue3/vite 项目
+
+and
+
+这是一个纯练手项目
+
+## 安装
 
 Using yarn:
 
@@ -9,7 +17,7 @@ Using yarn:
     $ yarn add m-calendar-panel -D
 ```
 
-## Use
+## 使用
 
 ```code
     <template>

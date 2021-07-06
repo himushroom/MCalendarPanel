@@ -7,7 +7,7 @@ set -e
 vue-cli-service build
 
 # cd 到构建输出的目录下
-cd dist
+cd docs
 
 # 部署到自定义域域名
 # echo 'www.example.com' > CNAME

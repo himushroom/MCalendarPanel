@@ -1,16 +1,19 @@
 {
 	"name": "m-calendar-panel",
 	"description": "日历面板组件",
-	"version": "0.0.4",
+	"version": "0.0.62",
 	"private": false,
 	"author": "himushroom",
 	"files": [
-		"cDist"
+		"dist"
 	],
-	"main": "./cDist/m-calendar-panel.common.js",
+	"main": "./dist/m-calendar-panel.common.js",
 	"exports": {
 		".": {
-			"import": "./cDist/m-calendar-panel.common.js"
+			"import": "./dist/m-calendar-panel.common.js"
+		},
+		"./dist/m-calendar-panel.css": {
+			"import": "./dist/m-calendar-panel.css"
 		}
 	},
 	"license": "ISC",
@@ -18,8 +21,9 @@
 		"start": "vue-cli-service serve",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
+		"preview": "concurrently \"vue-cli-service build --watch\" \"serve -s docs\"",
 		"build:bash": "bash deploy.sh",
-		"build:component": "vue-cli-service build --target lib --dest cDist --name m-calendar-panel ./src/components/MCalendarPanel/index.js"
+		"build:component": "vue-cli-service build --target lib --dest dist --name m-calendar-panel ./src/components/MCalendarPanel/index.js"
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",
@@ -31,12 +35,13 @@
 		"@vue/cli-plugin-eslint": "~4.5.0",
 		"@vue/cli-service": "~4.5.0",
 		"@vue/compiler-sfc": "^3.0.0",
+		"autoprefixer": "8.0.0",
 		"babel-eslint": "^10.1.0",
 		"babel-plugin-import": "^1.13.3",
 		"element-plus": "^1.0.2-beta.45",
 		"eslint": "^6.7.2",
 		"eslint-plugin-vue": "^7.0.0",
-		"m-calendar-panel": "0.0.4",
+		"postcss-loader": "^6.1.1",
 		"stylus": "^0.54.8",
 		"stylus-loader": "^3.0.2",
 		"vue-style-loader": "^4.1.3"
