@@ -90,9 +90,10 @@
 </template>
 
 <script>
+import { defineComponent } from "vue";
 import { lunarInfo } from "./MCalendarPanel/utils.js";
 
-export default {
+export default defineComponent({
 	name: "SelectDate",
 	props: {
 		date: [Date, String],
@@ -170,7 +171,7 @@ export default {
 			this.$emit("update:date", new Date(year, month));
 		}
 	}
-};
+});
 </script>
 
 <style lang="stylus" scoped>
@@ -205,4 +206,5 @@ export default {
 
 .go-today
   margin-left 25px
+
 </style>

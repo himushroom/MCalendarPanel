@@ -1,5 +1,5 @@
 {
-	"name": "m-calendar-panel",
+	"name": "m-calendar-panelss",
 	"description": "日历面板组件",
 	"version": "0.0.63",
 	"private": false,
@@ -41,6 +41,7 @@
 		"element-plus": "^1.0.2-beta.45",
 		"eslint": "^6.7.2",
 		"eslint-plugin-vue": "^7.0.0",
+		"m-calendar-panel": "0.0.62",
 		"postcss-loader": "^6.1.1",
 		"stylus": "^0.54.8",
 		"stylus-loader": "^3.0.2",

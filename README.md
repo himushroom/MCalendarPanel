@@ -13,8 +13,7 @@ and
 Using yarn:
 
 ```code
-    $ npm i -g yarn
-    $ yarn add m-calendar-panel -D
+    $ npm i m-calendar-panel
 ```
 
 ## 使用
@@ -26,7 +25,7 @@ Using yarn:
 
     <script>
         import MCalendarPanel from "m-calendar-panel";
-        import "m-calendar-panel/cDist/m-calendar-panel.css";
+        import "m-calendar-panel/dist/m-calendar-panel.css";
 
         export default {
             components: { MCalendarPanel }
